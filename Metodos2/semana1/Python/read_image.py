@@ -34,7 +34,7 @@ for x in range(0, img_open.size[0]-1):
 			result = derivate_central(img_open_mat[x+1,y][0], img_open_mat[x-1, y][0], 1)
 
 		# falta comentar
-		if result < 127.5:
+		if result < 1:
 			img_exit_mat[x,y] = 1
 		else:
 			img_exit_mat[x,y] = 0
