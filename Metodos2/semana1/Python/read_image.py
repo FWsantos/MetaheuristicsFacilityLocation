@@ -28,7 +28,7 @@ for x in range(0, img_open.size[0]-1):
 	for y in range(0, img_open.size[1]-1):
 		if x == 0: # se estiver no limite esquerdo aplica forward
 			result = derivate_forward(img_open_mat[x,y][0], img_open_mat[x+1, y][0], 1)
-		# se estiver no limite esquerdo aplica backward
+		# se estiver no limite direito aplica backward
 		elif x == img_open.size[0]-1:
 			result = derivate_backward(img_open_mat[x,y][0], img_open_mat[x-1, y][0], 1)
 		else:
