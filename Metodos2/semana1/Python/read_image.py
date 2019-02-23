@@ -28,11 +28,9 @@ for x in range(0, img_open.size[0]-1):
 	for y in range(0, img_open.size[1]-1):
 		if x == 0: # se estiver no limite esquerdo aplica forward
 			result = derivate_forward(img_open_mat[x,y][0], img_open_mat[x+1, y][0], 1)
-		# se estiver no limite direito aplica backward
-		elif x == img_open.size[0]-1:
+		elif x == img_open.size[0]-1: # se estiver no limite direito aplica backward
 			result = derivate_backward(img_open_mat[x,y][0], img_open_mat[x-1, y][0], 1)
-		else:
-		# pixels em que se aplica a filosofia central
+		else: # pixels em que se aplica a filosofia central
 			result = derivate_central(img_open_mat[x+1,y][0], img_open_mat[x-1, y][0], 1)
 
 		# falta comentar
@@ -41,5 +39,5 @@ for x in range(0, img_open.size[0]-1):
 		else:
 			img_exit_mat[x,y] = 0
 
-# Salva a imgaem saida
+# Salva a imagem saida
 img_exit.save('img_exit.png')
