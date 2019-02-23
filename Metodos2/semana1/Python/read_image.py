@@ -18,7 +18,7 @@ img_open_mat = img_open.load()  # Carregando a imagem para array
 # Criando a imagem de saida
 # new -> cria nova imagem
 # '1' -> 1 bit pixel, ou é branco(1) ou preto(0)
-# img_open.size -> imagem é cirada com as dimensões de img_open
+# img_open.size -> imagem é criada com as dimensões de img_open
 img_exit = Image.new('1' , img_open.size) 
 img_exit_mat = img_exit.load()  # Carregando a imagem array
 
