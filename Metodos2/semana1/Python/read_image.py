@@ -12,7 +12,7 @@ def derivate_backward(fx, fx_backward, delta_x):
 def derivate_central(fx_forward, fx_backward, delta_x):
 	return (fx_forward - fx_backward)/(2*delta_x)
 
-img_open = Image.open('img_open.png') # Imagem a  qual  o objeto vai representar
+img_open = Image.open('img_open.jpeg') # Imagem a  qual  o objeto vai representar
 img_open_mat = img_open.load()  # Carregando a imagem para array
 
 # Criando a imagem de saida
