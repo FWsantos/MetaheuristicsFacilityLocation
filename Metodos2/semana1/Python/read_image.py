@@ -22,7 +22,7 @@ img_open_mat = img_open.load()  # Carregando a imagem para array
 img_exit = Image.new('1' , img_open.size) 
 img_exit_mat = img_exit.load()  # Carregando a imagem array
 
-result = 0
+global result
 # iterando cada pixel de img_open
 for x in range(0, img_open.size[0]-1):
 	for y in range(0, img_open.size[1]-1):
