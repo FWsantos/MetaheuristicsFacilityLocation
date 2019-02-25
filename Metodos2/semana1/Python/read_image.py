@@ -22,19 +22,32 @@ img_open_mat = img_open.load()  # Carregando a imagem para array
 img_exit = Image.new('1' , img_open.size) 
 img_exit_mat = img_exit.load()  # Carregando a imagem array
 
-global result
+global resultx, resulty
 # iterando cada pixel de img_open
 for x in range(0, img_open.size[0]-1):
 	for y in range(0, img_open.size[1]-1):
+	
+		# CApturando variação na horizontal
 		if x == 0: # se estiver no limite esquerdo aplica forward
-			result = derivate_forward(img_open_mat[x,y][0], img_open_mat[x+1, y][0], 1)
+			resultx = derivate_forward(img_open_mat[x,y][0], img_open_mat[x+1, y][0], 1)
 		elif x == img_open.size[0]-1: # se estiver no limite direito aplica backward
-			result = derivate_backward(img_open_mat[x,y][0], img_open_mat[x-1, y][0], 1)
+			resultx = derivate_backward(img_open_mat[x,y][0], img_open_mat[x-1, y][0], 1)
 		else: # pixels em que se aplica a filosofia central
-			result = derivate_central(img_open_mat[x+1,y][0], img_open_mat[x-1, y][0], 1)
+			resultx = derivate_central(img_open_mat[x+1,y][0], img_open_mat[x-1, y][0], 1)
+		
+		# CApturando variação na vertical
+		if y == 0: # se estiver no limite esquerdo aplica forward
+			resulty = derivate_forward(img_open_mat[x,y][0], img_open_mat[x, y+1][0], 1)
+		elif y == img_open.size[0]-1: # se estiver no limite direito aplica backward
+			resulty = derivate_backward(img_open_mat[x,y][0], img_open_mat[x, y-1][0], 1)
+		else: # pixels em que se aplica a filosofia central
+			resulty = derivate_central(img_open_mat[x+1,y][0], img_open_mat[x, y-1][0], 1)
 
 		# falta comentar
-		if result < 1:
+		treshold = 13
+		if abs(resultx) > treshold:
+			img_exit_mat[x,y] = 1
+		elif abs(resulty) > treshold:
 			img_exit_mat[x,y] = 1
 		else:
 			img_exit_mat[x,y] = 0
