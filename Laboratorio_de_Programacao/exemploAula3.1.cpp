@@ -21,10 +21,10 @@ double *ler_vetor(int tam)
 double soma(double *v, int tam)
 {
 	double *fim = v+tam;
-	double soma = 0;
+	double sum = 0;
 	for (double *p = v; p != fim; ++p)
-		soma += *p;
-	return soma;
+		sum += *p;
+	return sum;
 }
 
 int main()
@@ -43,7 +43,7 @@ int main()
 		return 1;
 	}
 
-	double soma = soma(v,n);
-	cout << "A soma é "<< soma << '\n';
+	double sum = soma(v,n);
+	cout << "A soma é "<< sum << '\n';
 	delete []v;
 }
