@@ -21,7 +21,7 @@ double *ler_vetor(int tam)
 }
 
 void dobrar_vetor(double *v, int tam)
-{		
+{       
 	double *t = new(nothrow) double[2*tam];
 	for (int i = 0; i != tam; ++i){
 		*t = *i;
