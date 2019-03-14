@@ -12,17 +12,17 @@ void dobrar_vetor(double *v, int tam)
 
 double *ler_vetor(int tam)
 {
-	double *v = new(nothrow) double[tam];
-	for (int i = 0; i != tam; ++i)
-	{
-		if(v == NULL)
-			dobrar_vetor(v, tam);
+    double *v = new(nothrow) double[tam];
+    for (int i = 0; i != tam; ++i)
+    {
+        if(v == NULL)
+            dobrar_vetor(v, tam);
 
-		cout << "Digite v["<<i<<"]: ";
-		cin >> v[i];
-	{
+        cout << "Digite v["<<i<<"]: ";
+        cin >> v[i];
+    {
 
-	return v;
+    return v;
 }
 
 void main(){
