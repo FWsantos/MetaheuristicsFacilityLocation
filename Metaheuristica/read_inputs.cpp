@@ -39,9 +39,10 @@ int list_dir(const char *path) {
             }
 
             // int c; // note: int, not char, required to handle EOF
-            // while ((c = fgetc(fp)) != EOF) { // standard C I/O file reading loop
+            while ((c = fgetc(fp)) != EOF) { // standard C I/O file reading loop
+                
             //  putchar(c);
-            // }
+            }
 
             if (ferror(fp))
                 puts("Erro na Leitura do arquivo");
