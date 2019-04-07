@@ -5,7 +5,7 @@
 // #include <sys/types.h>
 
 using namespace std;
-int list_dir(const char *path) {
+int ler_pasta(const char *path) {
     struct dirent *entry;
     DIR *dir = opendir(path);
 
@@ -38,10 +38,10 @@ int list_dir(const char *path) {
                 return EXIT_FAILURE;
             }
 
-            // int c; // note: int, not char, required to handle EOF
+            int c; // note: int, not char, required to handle EOF
             while ((c = fgetc(fp)) != EOF) { // standard C I/O file reading loop
                 
-            //  putchar(c);
+                putchar(c);
             }
 
             if (ferror(fp))
@@ -75,5 +75,5 @@ int main() {
 
     // fclose(fp);
 
-    int a = list_dir("testes/");
+    int a = ler_pasta("testes/");
 }

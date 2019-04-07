@@ -1,11 +1,13 @@
-    #include <iostream>
-#include "Teste.hpp"
-using namespace std;
+#include "Utils.hpp"
+
 int main()
 {
-    Teste t;
-    t.set_values(2,5);
-    cout << t.area() << endl;
-    
-    return 0;
+	FL* fl = gerar_problema("testes1/cap101.txt");
+	
+	for (int i = 0; i < fl->getN(); ++i){
+		cout << "capacidade local "<<i<<" = "<<fl->getCapacidade(i) << endl;
+		cout << "Custo fixo local "<<i<<" = "<<fl->getCustoFixo(i) << endl;
+		
+	}
+	return 0;
 }
